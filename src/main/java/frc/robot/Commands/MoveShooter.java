@@ -13,6 +13,15 @@ public MoveShooter(double power) {
 }
 
 @Override
-protected void exectute() {
+protected void execute() {
+  Shooter.moveArm(_power);
 
 }
+
+
+//@Override
+//protected boolean isFinished() {
+ // return false;
+}
+
+
