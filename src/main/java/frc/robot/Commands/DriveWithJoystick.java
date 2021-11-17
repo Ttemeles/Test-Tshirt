@@ -39,5 +39,6 @@ protected boolean isFinished() {
 
 @Override
 protected void end() {
-    SmartDashboard.putString("Drive With Joystick Running"
+    SmartDashboard.putString("Drive With Joystick Running?:", "Interupted" );
+}
 }
