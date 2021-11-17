@@ -5,7 +5,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 public class DriveWithJoystick extends Command {
-    public double leftStickVal, righStickVal;
+    public double leftStickVal;
+    public double rightStickVal;
+    public double leftStickX, leftStickY;
+
 }
 
 public DriveWithJoystick () {
@@ -22,12 +25,12 @@ protected void initialize() {
 @Override
 protected void execute()
 {
-    leftStickVal = Robot.oi.getControllerValue(1);
-    rightStickVal = Robot.oi.getControllerValue(2);
+    leftStickVal = Robot.oi.getControllerValue(0);
+    rightStickVal = Robot.oi.getControllerValue(1);
 
-    Robot.drive.arcadeDrive(leftStickVal, -rightStickVal);
+    Robot.drive.tankDrive(leftStickVal, -rightStickVal);
     SmartDashboard.putNumber("LeftStick Val", leftStickVal );
-    SmartDashboard.putNumber("RightStick Val", rightStickVal );
+    SmartDashboard.putNumber("RightStick Val", rightStickVal ); 
 
 @Override
 protected boolean isFinished() {
